@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+body {
+    height: fit-content;
+    margin: 20px;
+    border: 2px solid red;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+    margin: 20px;
+    padding: 10px;
+    font-size: 25px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+}
+
+th {
+    font-size: 22px;
+}
+
+td {
+    font-size: 18px;
+}
+
+th, td {
+    padding: 20px;
+}
+
+div {
+    padding: 10px;
+    margin: 10px;
+}
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* // let letters = '1234567890abcdf';
+    // let colorcodeLength = 6;
+    // let colorCode= "#";
+    // for (let i = 0; i < colorcodeLength; i++) {
+    //     let randomNumber = Math.floor(Math.random() * letters.length);
+    //     colorCode += letters.substring(randomNumber, randomNumber+1);
+    // }
+    // return changeColor; */
+
+
+
+
+
+/* 
+    //to change the Shape
+btn[1].addEventListener("click", changeShape);
+let arr=["square", "round", "diamond", "triangle", "arrow", "frame", "star","cross", "left-point", "right-point", "parallal", "cheg"];
+
+function randomShape(){
+    let idx = Math.floor(Math.random() * arr.length);
+    return arr[idx];
+}
+
+function changeShape(){
+    let idname = randomShape();
+    shape.id = idname;
+} */
