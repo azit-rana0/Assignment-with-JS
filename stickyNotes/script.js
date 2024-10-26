@@ -3,6 +3,7 @@ let textArea = document.getElementById("text_area");
 let color = document.getElementById("color");
 color.value = "#00ffa1";
 let massage = document.getElementById("massage");
+let noteContainer = document.getElementById("note_container");
 
 function addNotes() {
     if (textArea.value === "") {
@@ -23,13 +24,15 @@ function addNotes() {
 
         
         div.style.backgroundColor = color.value;
-        note_container.appendChild(div);
+        noteContainer.appendChild(div);
+        isNotesPresent()
     
         textArea.value = "";
         console.log(div);
 
         cross_btn.addEventListener("click", function(){
-            div.style.display = "none";
+            div.remove();
+            isNotesPresent()
         })
 
         cross_btn.style.position = "absolute"
@@ -44,8 +47,19 @@ function addNotes() {
 }
 
 btn[1].addEventListener('click', () => {
-    note_container.innerHTML = "";
+    noteContainer.innerHTML = "";
+    isNotesPresent()
 }) 
 
 btn[0].addEventListener('click', addNotes)
+
+// for notes is empty/present the show the massage
+function isNotesPresent() {
+    let notes = noteContainer.childNodes
+    if (notes.length > 0) {
+        massage.style.display = "none";
+    } else {
+        massage.style.display = "block";
+    }
+}
 
