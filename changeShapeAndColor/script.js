@@ -1,15 +1,10 @@
-let circle = document.querySelector(".circle");
+let roundContainer = document.querySelector(".round_container");
 let btn = document.querySelectorAll("button");
 let square = document.querySelector(".square")
 
 
-
-
-// genarateColor();
-// to generate the color
+// for color change
 function genarateColor(){
-    // let color = Math.floor(Math.random() * 255);
-    // return color;
     let letters = '1234567890abcdf';
     let colorcodeLength = 6;
     let colorCode= "";
@@ -17,27 +12,26 @@ function genarateColor(){
         let randomNumber = Math.floor(Math.random() * letters.length);
         colorCode += letters.substring(randomNumber, randomNumber + 1);
     }
-    return changeColor;
+    return colorCode;
 }
 
 function changeColor(){
     let newColor = genarateColor();
-    circle.style.backgroundColor = '#' + newColor;
+    roundContainer.style.backgroundColor = '#' + newColor;
 }
 
 btn[0].addEventListener("click", changeColor);
 
-//to change the Shape
 
-let arr=["square", "round", "diamond", "triangle", "arrow", "frame", "star","cross", "left-point", "right-point", "parallal", "cheg"];
+// for shape change
+let arr = ["square", "circle", "diamond", "triangle", "arrow", "frame", "star","cross", "left-point", "right-point", "parallal", "cheg"];
 
-function randomShape(){
-    let idx = Math.floor(Math.random() * arr.length);
-    return arr[idx];
-}
+let index = 0;
+btn[1].addEventListener("click", () => {
+    square.classList.remove(arr[index]);
+    index++;
 
-function changeShape(){
-    let idname = randomShape();
-    shape.id = idname;
-}
-btn[1].addEventListener("click", changeShape);
+    if (index >= arr.length) index = 0;
+
+    square.classList.add(arr[index]);
+}); 
