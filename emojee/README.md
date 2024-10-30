@@ -5,7 +5,7 @@ An interactive emoji application where users can browse, filter, and search emoj
 
 ## Live Demo
 
-[Link to the live demo]()
+[Link to the live demo](https://azit-rana0.github.io/Assignment-with-JS/emojee/index.html)
 
 ## Features
 
