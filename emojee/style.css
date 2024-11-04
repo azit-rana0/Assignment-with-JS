@@ -8,7 +8,7 @@
 body {
     height: 100vh;
     width: 100%;
-    background-color: rgb(254,222,187);
+    background-color: rgba(254, 222, 187, 0.496);
 }
 
 h1 {
@@ -21,70 +21,117 @@ h1 {
 .search_container {
     width: 100%;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
     padding-block: 30px;
+}
+
+.button_filter{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 button {
     background-color: rgb(253,187,143);
-    padding-inline: 10px;
-    padding-block: 8px;
-    font-size: 15px;
-    font-weight: 600;
+    padding: 8px 10px;
+    color: #333;
+    cursor: pointer;
+    font-size: 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
 }
 
-.input_container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    padding-left: 50px;
-    gap: 10px;
+.button_value.active,
+.button_value:hover {
+    background-color: #ff8c66;
+    color: #fff;
 }
 
 .input {
     display: flex;
+    width: 280px;
     gap: 2px;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     background-color: white;
     border-radius: 50px;
     padding-inline: 8px;
 }
 
 #input {
+    border: 2px sloid red;
     padding-block: 10px;
     outline: none;
     border: none;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
     font-size: 14px;
 }
 
 #emoji_container {
     padding-inline: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(60px, auto));
-    align-content: center;
-    justify-content: center;
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(50px, auto));
+    align-items: center;
+    justify-items: center;
+    gap: 20px;
 }
 
 .emoji {
-    font-size: 2.5rem;
-    border: 2px solid rgb(254,222,187);
-    transition: all 300ms linear;
-    
+    font-size: 2.1rem;
+    padding: 6px;
+    border: 2px solid rgb(254,238,221);
 }
 
 .emoji:hover {
     border-radius: 10px;
     background-color: rgba(153, 89, 20, 0.458);
     cursor: pointer;
+    transition: background-color 300ms linear;
+}
+
+/* for responsive */
+@media screen and (min-width: 200px) and (max-width: 425px) { 
+    h1 {
+        font-size: 31px;
+        text-align: start;
+        padding-inline: 20px;
+    }
+
+    .emoji {
+        font-size: 1.5rem;
+    }
+
+    #emoji_container {
+        gap: 0px;
+    }
+
+    button {
+        padding: 5px 8px;
+        font-size: 14px;
+    }
+}
+
+
+@media screen and (min-width: 425px) and (max-width: 768px) { 
+    h1 {
+        font-size: 45px;
+        text-align: start;
+        padding-inline: 20px;
+    }
+
+    .emoji {
+        font-size: 1.7rem;
+    }
+
+    #emoji_container {
+        gap: 0px;
+    }
 }
 

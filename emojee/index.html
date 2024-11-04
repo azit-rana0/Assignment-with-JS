@@ -8,27 +8,24 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1 style="font-size: 50px;">Emojee - Emoji 🔍 Applocation</h1>
+    <h1>Emojee - Emoji 🔍 Applocation</h1>
     <div class="search_container">
-        <button id="all">All</button>
-        <button id="face">Face</button>
-        <button id="heart">Heart</button>
-        <button id="book">Book</button>
-        <button id="hand">Hand</button>
-        <button id="sport">Sport</button>
-        <button id="flag">Flag</button>
-        <div class="input_container">
-            <div class="input">
-                <img src="https://cdn-icons-png.flaticon.com/128/17808/17808419.png" height="22px" width="22px" alt="">
-                 <input type="text" id="input" placeholder="Search Emoji...">
-            </div>
-            <button id="search">Search</button>
+        <div class="button_filter">
+            <button class="button_value active" data-category="All">All</button>
+            <button class="button_value" data-category="Smileys & Emotion">Face</button>
+            <button class="button_value" data-category="Heart">Heart</button>
+            <button class="button_value" data-category="Book">Book</button>
+            <button class="button_value" data-category="Hand">Hand</button>
+            <button class="button_value" data-category="Sport">Sport</button>
+            <button class="button_value" data-category="Flag">Flag</button>
         </div>
         
-
-        
+        <div class="input">
+            <img src="https://cdn-icons-png.flaticon.com/128/17808/17808419.png" height="22px" width="22px" alt="">
+            <input type="text" id="input" placeholder="Search Emoji...">
+        </div>
     </div>
-    
+
     <div id="emoji_container"></div>
 
     <script src="./script.js"></script>

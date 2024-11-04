@@ -4,13 +4,8 @@ const emojiList = [
       "emoji": "😀"
     , "description": "grinning face"
     , "category": "Smileys & Emotion"
-    , "aliases": [
-        "grinning"
-      ]
-    , "tags": [
-        "smile"
-      , "happy"
-      ]
+    , "aliases": ["grinning"]
+    , "tags": ["smile", "happy"]
     , "unicode_version": "6.1"
     , "ios_version": "6.0"
     }
@@ -22748,27 +22743,21 @@ const emojiList = [
   ];
 
 
-// now started functioning
-
-const emojiContainer = document.querySelector("#emoji_container");
-const input = document.querySelector("#input");
-const search = document.querySelector("#search");
-
-const all = document.querySelector("#all");
-const face = document.querySelector("#face");
-const heart = document.querySelector("#heart");
-const book = document.querySelector("#book");
-const hand = document.querySelector("#hand");
-const sport = document.querySelector("#sport");
-const flag = document.querySelector("#flag");
-
+  const emojiContainer = document.querySelector("#emoji_container");
+  const input = document.querySelector("#input");
+  const filterButtons = document.querySelectorAll(".button_value");
   
-function displayEmoji(searchValue) {
-    emojiContainer.innerHTML = '';
+  function displayEmoji(searchValue = '', category = 'All') {
+      emojiContainer.innerHTML = '';
+  
+      emojiList.forEach(emoji => {
+          const matchesCategory = category === 'All' || emoji.category.includes(category);
+          const matchesSearch = !searchValue || 
+                                emoji.description.includes(searchValue) ||
+                                emoji.tags.includes(searchValue) || 
+                                emoji.aliases.includes(searchValue);
 
-    emojiList.forEach(emoji => {
-        if(emoji.tags.includes(searchValue) || emoji.description.includes(searchValue) || emoji.aliases.includes(searchValue) || emoji.category.includes(searchValue) || !searchValue) {
-
+          if (matchesCategory && matchesSearch) {
             const emojiDiv = document.createElement("div");
             emojiDiv.classList.add("emoji");
 
@@ -22778,29 +22767,31 @@ function displayEmoji(searchValue) {
             emojiDiv.appendChild(emojiSpan);
             emojiContainer.appendChild(emojiDiv);
         }
-    });
-}
+      });
+  }
+  
+  input.addEventListener("input", () => {
+      const category = document.querySelector(".button_value.active")?.dataset.category || 'All';
+      displayEmoji(input.value.toLowerCase(), category);
+  });
+  
+  filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+          filterButtons.forEach(btn => btn.classList.remove("active"));
+          button.classList.add("active");
+  
+          const category = button.dataset.category;
+          displayEmoji(input.value.toLowerCase(), category);
+      });
+  });
 
+   // Initial display of all emojis
+   displayEmoji();
 
-search.addEventListener("click", () => {
-    displayEmoji(input.value)
-});
-
-// category button event listenners
-all.addEventListener("click", () => displayEmoji("", "all"));
-face.addEventListener("click", () => displayEmoji("", "Smileys & Emotion"));
-heart.addEventListener("click", () => displayEmoji("", "Heart"));
-book.addEventListener("click", () => displayEmoji("", "Book"));
-hand.addEventListener("click", () => displayEmoji("", "Hand"));
-sport.addEventListener("click", () => displayEmoji("", "Sport"));
-flag.addEventListener("click", () => displayEmoji("", "Flag"));
-
-
-
-// copied emoji
-emojiContainer.addEventListener("click", (e) => {
+  emojiContainer.addEventListener("click", (e) => {
     navigator.clipboard.writeText(e.target.innerText);
-    alert("Copied to clipboard");
+    alert("Copied to clipboard"  + e.target.innerText);
 });
 
-displayEmoji("", "all");
+
+
