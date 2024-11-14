@@ -2,7 +2,7 @@
 
 GeeksterMon is a simple web application that allows users to explore Pokémon by filtering by type or searching by name. The project fetches Pokémon data, displays it in a clean layout, and provides interactive search and filter options.
 
-## [Live]()
+## [Live](https://azit-rana0.github.io/Assignment-with-JS/pokimon/index.html)
 
 ## Table of Contents
 
