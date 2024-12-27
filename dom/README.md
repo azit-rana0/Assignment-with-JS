@@ -2,7 +2,7 @@
 
 This project demonstrates how to dynamically manipulate and interact with a webpage's user interface (UI) using JavaScript. The goal is to ensure a visually appealing and consistent UI while incorporating interactive features like event handling.
 
-# Features
+## Features
 1 .  Dynamic Stling :
 - Font Family : Arial
 - Height: 230px
@@ -23,7 +23,7 @@ This project demonstrates how to dynamically manipulate and interact with a webp
 
 ## How to View the Hosted Project
 1. Visit the live version of the project using the link below:  
-   [Live Version](#)
+   [Live Version](https://azit-rana0.github.io/Assignment-with-JS/dom/index.html)
 
 2. Hover over the `div` to observe the dynamic styling changes on `mouseenter` and `mouseleave`.
 3. Click on the `div` to change its text content.
@@ -33,7 +33,7 @@ To run this project locally, follow these steps:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/ui-styling-interaction.git
+   git clone https://github.com/azit-rana0/Assignment-with-JS/tree/main/dom
    ```
 
 2. Navigate to the project folder:
