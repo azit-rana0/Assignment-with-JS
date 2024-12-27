@@ -39,7 +39,7 @@ To run this project locally, follow these steps:
 2. Navigate to the project folder:
 
     ```bash
-    cd ui-styling-interaction
+    cd dom
     ```
 3. Open the index.html file in any web browser:
 
