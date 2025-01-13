@@ -4,7 +4,7 @@ This project integrates the Unsplash API to create a dynamic web page that fetch
 
 ## 🌟 Hosted Link
 
-[Link to the live demo](https://azit-rana0.github.io/Assignment-with-JS/imageSearchApp/index.html)
+### [Link to the live demo](https://azit-rana0.github.io/Assignment-with-JS/imageSearchApp/index.html)
 
 ## 🚀 Features:
 
@@ -86,7 +86,7 @@ git clone https://github.com/your-username/unsplash-image-fetcher.git
 
 ## 📷 Preview
 
-(Add a screenshot of your project here)
+![Page Screenshot](./page-screenshot.png)
 
 ## 👥 Author
 
