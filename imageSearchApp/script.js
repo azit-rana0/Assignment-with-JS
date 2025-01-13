@@ -1,39 +1,72 @@
-let apiKey = "FfWXC79X7amgo3A-k-_RGECHi8hqaL1uhpRx17YnaTQ";
-let apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=10`;
+let apiKey = "8X3HPiY-SmaataqCPs1wP_ZiQAEdmd00x2diMifurv0";
+let searchQuery = "";
+const imageContainer = document.querySelector(".search_image_container");
+const searchBtn = document.getElementById("search-btn");
+const loadMoreBtn = document.getElementById("load-more");
 
-async function fetchImg() {
-    try{
-        let response = await fetch(apiUrl);
-        let data = await response.json()
-        console.log(data);
+let isFetching = false;
 
-        let imageContainer = documnet.querySelector("search_image_container")
-        data.forEach(image => {
-            imageContainer.innerHTML += `
-                <div class="search_image">
-                    <div class="image">
-                        <img src="image.urls.regular" alt="image.alt.description">
-                    </div>
-                    <a href="image.links.html" target = "_blank">image.alt_description</a>
-                </div>
-            `
-        })
-    } catch (error) {
-        console.log(error);
+async function fetchImg(searchTerm = "", isLoadMore = false) {
+  try {
+    const apiUrl = searchTerm
+      ? `https://api.unsplash.com/search/photos?client_id=${apiKey}&query=${searchTerm}&per_page=10`
+      : `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=10`;
+
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+
+    const images = data.results || data;
+
+    if (!isLoadMore) imageContainer.innerHTML = "";
+
+    images.forEach((image) => {
+      imageContainer.innerHTML += `
+    <div class="search_image">
+    <div class="image">
+      <img src="${image.urls.regular}" alt="${image.alt_description}">
+    </div>
+    <a href="${image.links.html}" target="_blank">${
+        image.alt_description || "No description available"
+      }</a>
+  </div>
+`;
+    });
+
+    if (searchTerm) {
+      loadMoreBtn.style.display = "inline-block";
+    } else {
+      loadMoreBtn.style.display = "none";
     }
+  } catch (error) {
+    console.error("Error fetching images:", error);
+  }
 }
+
+searchBtn.addEventListener("click", () => {
+  const searchInput = document.getElementById("search-input");
+  searchQuery = searchInput.value.trim();
+
+  if (searchQuery) {
+    fetchImg(searchQuery);
+  } else {
+    alert("Please enter a search term.");
+  }
+});
+
+loadMoreBtn.addEventListener("click", () => {
+  if (searchQuery) {
+    fetchImg(searchQuery, true);
+  }
+});
 
 fetchImg();
 
-window.addEventListener("scroll", () => {
-    if(window.scrollY + window.innerHeight + 10 >= document.body.offsetHeight) {
-        fetchImg();
-    }
-
-    // if (Math.ceil(window.screenY + window.innerHeight >= document.offsetHeight)) {
-    //     getPhotos();
-    // }
-});
-
-
-// https://demo.100jsprojects.com/image-search-app
+// **Trigger fetching more images on scroll**
+// window.addEventListener("scroll", () => {
+//   if (
+//     window.scrollY + window.innerHeight >= document.body.offsetHeight - 10 &&
+//     !isFetching 
+//   ) {
+//     fetchImg(); 
+//   }
+// });
