@@ -120,6 +120,7 @@ a {
   justify-content: end;
   margin-block: 2.5rem;
   padding-right: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 .load-more-btn {
   display: none;
