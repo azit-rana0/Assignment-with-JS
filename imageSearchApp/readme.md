@@ -4,7 +4,7 @@ This project integrates the Unsplash API to create a dynamic web page that fetch
 
 ## 🌟 Hosted Link
 
-[Link to the live demo]()
+[Link to the live demo](https://azit-rana0.github.io/Assignment-with-JS/imageSearchApp/index.html)
 
 ## 🚀 Features:
 
