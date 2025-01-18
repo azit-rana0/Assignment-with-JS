@@ -1,5 +1,5 @@
 
-const apikey = "AHTYJPloAW8VLXrPiUuWXFvh0ZWTUE4DHkU6gKMgVUY";
+const apikey = "fTXOg9m9rypkHnMyGUFWNzIxeksgUi5ab5g5MGriQOI";
 const count = 10;
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apikey}&count=${count}`;
 
@@ -17,11 +17,11 @@ document.addEventListener("scroll", async () => {
   if (Math.abs(contentSeenTillNow - offsetHeight) <= 10) {
     clearInterval(timerId);
     timerId = setTimeout(async()=> {
-      console.log("scroll happing");
+      // console.log("scroll happing");
       const data = await imageData();
-      console.log(data);
+      // console.log(data);
       renderData(data);
-    },5_00)
+    },150)
   }
 });
 
