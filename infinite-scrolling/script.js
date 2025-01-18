@@ -1,5 +1,5 @@
 
-// const apikey = "AHTYJPloAW8VLXrPiUuWXFvh0ZWTUE4DHkU6gKMgVUY";
+const apikey = "AHTYJPloAW8VLXrPiUuWXFvh0ZWTUE4DHkU6gKMgVUY";
 const count = 10;
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apikey}&count=${count}`;
 
