@@ -22,7 +22,8 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.066) 0px 6px 6px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+    rgba(0, 0, 0, 0.066) 0px 6px 6px;
 }
 
 header > h2 {
@@ -39,8 +40,8 @@ header > input {
   color: rgba(0, 0, 0, 0.803);
 }
 
-header > input:focus{
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+header > input:focus {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   border: 1.5px solid #808080;
 }
 
@@ -71,7 +72,9 @@ header > input:focus{
 .movie:hover {
   border-color: #ffffffd2;
   transform: scale(1.02);
-  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .movie > img {
@@ -136,7 +139,7 @@ button:hover {
   }
 
   .movie-container {
-    padding:10px;
+    padding: 10px;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }

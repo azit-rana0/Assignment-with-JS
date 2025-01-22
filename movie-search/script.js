@@ -95,14 +95,13 @@ nextButton.addEventListener("click", async () => {
   }
 });
 
-
 (async function loaded() {
   try {
     const response = await fetch(
       `https://www.omdbapi.com/?apikey=${apiKey}&s=ram`
     );
     const data = await response.json();
-    renderMovies(data)
+    renderMovies(data);
   } catch (error) {
     console.error(error);
   }
