@@ -44,7 +44,8 @@ header > input {
 .movie {
   height: auto;
   min-height: 400px;
-  width: 300px;
+  max-width: 300px;
+  width: 100%;
   border: 2px solid #ffffff47;
   border-radius: 10px;
   padding-bottom: 10px;
@@ -60,6 +61,7 @@ header > input {
 }
 
 .movie > img {
+  width: 100%;
   height: 400px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -103,7 +105,7 @@ button:hover {
   border-color: #fff;
 }
 
-@media screen and (min-width: 300px) and (max-width: 425px) {
+@media screen and (min-width: 300px) and (max-width: 430px) {
   header {
     height: 4rem;
     padding-inline: 15px;
@@ -120,21 +122,17 @@ button:hover {
   }
 
   .movie-container {
-    width: 100%;
     padding:10px;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
 
   .movie {
-    height: auto;
     min-height: 200px;
-    width: 100%;
   }
 
   .movie > img {
     height: 200px;
-    width: 100%;
   }
 
   .title {
@@ -145,7 +143,7 @@ button:hover {
     font-size: 13px;
   }
 }
-@media screen and (min-width: 425px) and (max-width: 768px) {
+@media screen and (min-width: 430px) and (max-width: 770px) {
   header {
     height: 4.5rem;
     padding-inline: 1.5rem;
@@ -161,21 +159,54 @@ button:hover {
   }
 
   .movie-container {
-    width: 100%;
     padding: 20px;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
   }
 
   .movie {
-    height: auto;
     min-height: 200px;
-    width: 100%;
   }
 
   .movie > img {
     height: 300px;
-    width: 100%;
+  }
+
+  .title {
+    font-size: 17px;
+  }
+
+  .year {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 770px) and (max-width: 1030px) {
+  header {
+    height: 4.5rem;
+    padding-inline: 1.5rem;
+  }
+
+  header > h2 {
+    font-size: 1.5rem;
+  }
+
+  header > input {
+    padding: 7px 12px;
+    font-size: 14px;
+  }
+
+  .movie-container {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .movie {
+    min-height: 200px;
+  }
+
+  .movie > img {
+    height: 300px;
   }
 
   .title {
